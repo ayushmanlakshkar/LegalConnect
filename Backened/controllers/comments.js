@@ -4,15 +4,16 @@ const User = require('../models/User')
 
 const postComment = async (req, res) => {
     try {
-        const post = Post.findOne({ _id: req.body.postId })
-        const user = User.findOne({ _id: req.body.userId })
+        const post =await  Post.findOne({ _id: req.body.postId })
+        const user =await  User.findOne({ _id: req.body.userId })
         if (post && user) {
-            user.role === 'public' && post.role === 'experience' ?
-                res.status(400).send({ message: 'you cannot comment on lawyers post' })
+            console.log(user)
+            user.role === 'public'?
+                res.status(400).send({ message: 'you cannot comment ' })
                 :
                 Comment.create({
                     ref_post: post._id,
-                    ref_user: user._id,
+                    commentor: user._id,
                     content: req.body.content
                 }).then(() => {
                     res.status(200).send({ message: "Commented on a post" })
@@ -29,9 +30,10 @@ const postComment = async (req, res) => {
 
 const showComments = async (req, res) => {
     try {
-        const post = Post.find({ _id: req.body.postId });
+        const post = await  Post.findById(req.body.postId)
         if (!post) return res.status(404).send({ message: "post not found" })
-        const comments = Comment.find({ ref_user: req.body.postId })
+        const comments = await Comment.find({ ref_post: req.body.postId })
+        console.log(comments)
         res.status(200).send(comments)
     } catch {
         res.status(400).send({ message: "internal error" })

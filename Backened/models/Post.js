@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 // Define a schema
+const bcrypt = require('bcryptjs');
 
 const roles=["experience","question"]
 

@@ -1,44 +1,91 @@
 const Post = require('../models/Post')
+const user = require('../models/User')
 
 const createPost = async (req, res) => {
-    ref_user = await user.findOne({ username: req.body.name });
+    ref_user = await user.findOne({ username: req.body.username });
+
     if (!ref_user) {
         return res.status(404).send({ message: "Invalid user" })
     }
-    Post.create({
-                ref_user:!req.body.anonymous?ref_user._id : "",
-                anonymous_name:req.body.anonymous?ref_user._id : "",
-                title:req.body.title,
-                content:req.body.content,
-                role: ref_user.role==='lawyer'?req.body.postType:'question'
+
+    if (ref_user.role === 'lawyer') {
+        if (req.body.postType === 'experience') {
+            Post.create({
+                ref_user: ref_user._id,
+                title: req.body.title,
+                content: req.body.content,
+                role: 'experience'
             })
-    
+            return res.send("created post1")
+        } else {
+            if (req.body.anonymous) {
+                Post.create({
+                    anonymous_name: ref_user._id,
+                    title: req.body.title,
+                    content: req.body.content,
+                    role: 'question'
+                })
+                return res.send("created post2")
+
+            } else {
+                Post.create({
+                    ref_user: ref_user._id,
+                    title: req.body.title,
+                    content: req.body.content,
+                    role: 'question'
+                })
+                return res.send("created post3")
+            }
+        }
+    } else {
+        if (req.body.postType === 'question') {
+            if (req.body.anonymous) {
+                Post.create({
+                    anonymous_name: ref_user._id,
+                    title: req.body.title,
+                    content: req.body.content,
+                    role: 'question'
+                })
+                return res.send("created post4")
+
+            } else {
+                Post.create({
+                    ref_user: ref_user._id,
+                    title: req.body.title,
+                    content: req.body.content,
+                    role: 'question'
+                })
+                return res.send("created post5")
+            }
+        } else {
+            return res.status(400).send({ message: "User not allowed to post" })
+        }
+    }
 }
 
 const likePost = async (req, res) => {
-    const { postId, userId } = req.body; // Assuming postId and userId are sent in the request body
 
     try {
         // Find the post by ID
-        let Post = await Post.findById(postId);
+        let post_id
+        post_id = await Post.findById(req.body.postId)
 
         if (!Post) {
             return res.status(404).json({ error: 'Post not found' });
         }
-
         // Check if the user has already liked the post
-        const likedIndex = Post.likes.indexOf(userId);
+        const likedIndex = post_id.likes.indexOf(req.body.userId);
 
         if (likedIndex === -1) {
             // User hasn't liked the post, so add their like
-            Post.likes.push(userId);
+            post_id.likes.push(req.body.userId);
         } else {
             // User has already liked the post, so remove their like
-            Post.likes.splice(likedIndex, 1);
+            post_id.likes.splice(likedIndex, 1);
         }
 
         // Save the updated post
-        await Post.save();
+        await post_id.save();
 
         // Send a success response
         res.json({ message: 'Like toggled successfully', liked: !!(likedIndex === -1) });
@@ -54,5 +101,5 @@ const showPosts = async (req, res) => {
 }
 
 module.exports = {
-    createPost ,likePost,showPosts
+    createPost, likePost, showPosts
 }

@@ -12,7 +12,7 @@ const commentdetails = new mongoose.Schema({
      timestamp:{
         type:String,
         default : function() {
-         return formatTimestamp(Date.now).timestamp; // Call formatTimestamp with Date.now
+         return formatTimestamp(Date.now()); // Call formatTimestamp with Date.now
      }
      }
 });
