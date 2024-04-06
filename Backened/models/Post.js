@@ -26,10 +26,25 @@ comments:[{
 });
 
 
+postdetails.pre('save', async function (next) {
+  const user = this;
+  if (!user.isModified("anonymous_name")) {
+      return next();
+  }
 
+  try {
+      const saltRound = await bcrypt.genSalt(10);
+      const hashName = await bcrypt.hash(user.anonymous_name, saltRound);
+      user.anonymous_name = hashName;
+      next();
+  } catch (error) {
+      return next(error);
+  }
+});
 
 
 
 // Create a model based on the schema
-module.exports= mongoose.model('Post', postdetails);
+const Post = mongoose.model('Post', postdetails);
+module.exports = Post
 

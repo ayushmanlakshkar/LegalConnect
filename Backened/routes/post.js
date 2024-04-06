@@ -3,8 +3,8 @@ const router = express.Router();
 
 const postcontrollers = require('../controllers/post')
 
-router.post('/create',postcontrollers)
-router.post('/likePost',postcontrollers)
-router.get('/posts',postcontrollers)
+router.post('/create',postcontrollers.createPost)
+router.post('/likePost',postcontrollers.likePost)
+router.get('/posts',postcontrollers.showPosts)
 
 module.exports=router

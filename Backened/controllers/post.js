@@ -53,3 +53,6 @@ const showPosts = async (req, res) => {
     res.send(all_posts);
 }
 
+module.exports = {
+    createPost ,likePost,showPosts
+}

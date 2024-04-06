@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const timestamp=require('../utils/timestamp')
+const {formatTimestamp} =require('../utils/timestamp')
 // Define a schema
 const commentdetails = new mongoose.Schema({
     ref_post:{type: mongoose.Schema.Types.ObjectId, ref: 'post' },
@@ -11,10 +11,12 @@ const commentdetails = new mongoose.Schema({
      },
      timestamp:{
         type:String,
-        default:timestamp(time)
+        default : function() {
+         return formatTimestamp(Date.now).timestamp; // Call formatTimestamp with Date.now
+     }
      }
 });
 
 // Create a model based on the schema
-module.exports= mongoose.model('comment',commentdetails);
-
+const Comment = mongoose.model('comment',commentdetails);
+module.exports = Comment;

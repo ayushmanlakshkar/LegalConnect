@@ -5,7 +5,7 @@ const formatTimestamp = (timestamp) => {
   const formattedDate = format(date, 'dd/MM/yyyy');
   const formattedTime = format(date, 'HH:mm a');
 
-  return {date: formattedDate, time: formattedTime};
+  return { date: formattedDate, time: formattedTime };
 };
 
 module.exports = { formatTimestamp };

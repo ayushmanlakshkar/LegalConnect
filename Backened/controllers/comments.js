@@ -38,3 +38,7 @@ const showComments = async (req, res) => {
     }
 
 }
+
+module.exports ={
+    postComment,showComments
+}
