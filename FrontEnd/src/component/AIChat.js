@@ -9,7 +9,7 @@ export default function AIChat() {
       let myStyle1={
         borderRadius:'10px',
         width:'470px',
-        height:'200px'
+        height:'100px'
       }
       let myStyle3={
         borderRadius:'40px',
@@ -30,7 +30,7 @@ export default function AIChat() {
         <div style={myStyle1} className='container bg-light'> 
 
         </div><br/>
-        <textarea style={{borderRadius:'20px',marginLeft:'10px',}} rows="1" cols="50" placeholder='     Write your promp here..........'></textarea>
+        <textarea style={{borderRadius:'20px',marginLeft:'10px'}} rows="1" cols="45" placeholder='     Write your promp here..........'></textarea>
         <img src={send} style={img} className='bg-light'/><br/><br/>
     </div> 
   )

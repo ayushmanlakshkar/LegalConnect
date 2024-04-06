@@ -3,12 +3,12 @@ import pp2 from './images/pp2.png';
 import star from './images/star.png';
 import Comment from './Comment';
 export default function Anony() {
-    let myStyle3={
+    let myStylea={
         borderRadius:'5px',
         padding:'10px',
         marginTop:'10px',
       }
-      let myStyle={
+      let myStyleb={
         borderRadius:'5px',
         padding:'10px',
         marginTop:'10px',
@@ -26,9 +26,9 @@ export default function Anony() {
         alert('Button clicked!');
       }
   return (
-    <div style={myStyle3} className='container text-dark bg-light'>
+    <div style={myStylea} className='container text-dark bg-light'>
         <img src={pp2} style={img} /><b> Anonymous</b>
-        <div style={myStyle} className='container text-dark'>
+        <div style={myStyleb} className='container text-dark'>
             I’m facing a property dispute with my neighbor. What steps should I take to resolve this issue legally?
         </div><br/>
         <button onClick={handleClick}>Comment for answer</button>  <button>view Comment</button>       2comments

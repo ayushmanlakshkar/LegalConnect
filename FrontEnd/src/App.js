@@ -3,13 +3,15 @@ import Navbar from './component/Navbar';
 import Home from './component/Home';
 import Verify from './component/Verify'
 import QnA from './component/QnA';
-import React, {Component} from 'react';
-import { Auth0Provider } from '@auth0/auth0-react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Routes
 } from "react-router-dom";
+import Hello from './component/Hello';
+import Registration from './component/Registration';
+import Login from './component/Login';
 
 
 function App() {
@@ -18,6 +20,10 @@ function App() {
       <Router>
       <Navbar/>
         <Routes>
+            <Route  exact path="/" element={<Hello/> }/>
+            <Route  exact path="/registration" element={<Registration/> }/>
+            <Route  exact path="/login" element={<Login/> }/>
+            
             <Route  exact path="/Home" element={ <Home/> }/>
             <Route   exact path="/QnA" element={ <QnA/> }/>
             <Route   exact path="/Verify" element={ <Verify/> }/>

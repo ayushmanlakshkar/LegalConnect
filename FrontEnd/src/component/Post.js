@@ -4,7 +4,7 @@ import share from './images/share.png';
 import comment from './images/comment.png';
 import star from './images/star.png';
 import like from './images/like.png';
-export default function Post() {
+export default function Post({}) {
     
     let myStyle={
         backgroundColor:'rgba(54,56,88,0.75)',
@@ -23,7 +23,7 @@ export default function Post() {
       }
   return (
     <div style={myStyle} className='container'>
-     <br/><p className='text-light'><img src={pp}  width="50" height="50"/><b>  Lawyer1</b><img src={star}  width="15" height="15"/> (4.5)</p>
+     <br/> <p className='text-light'><img src={pp}  width="50" height="50"/><b>  Lawyer1</b><img src={star}  width="15" height="15"/> (4.5)</p>
       <div style={myStyle2} className='container bg-light'> 
         <div className='row'>
           <div className='col-md-8'><br/>
@@ -45,6 +45,7 @@ export default function Post() {
         </div>
       </div>
       <img src={like} style={img} className='bg-light'/> <img src={share}  className='bg-light' style={img}/> <img src={comment}  className='bg-light' style={img}/>
-    <br/></div>
+    <br/>
+    </div>
   )
 }

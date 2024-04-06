@@ -5,6 +5,6 @@ const postcontrollers = require('../controllers/post')
 
 router.post('/create',postcontrollers.createPost)
 router.post('/likePost',postcontrollers.likePost)
-router.get('/posts',postcontrollers.showPosts)
+router.post('/posts',postcontrollers.showPosts)
 
 module.exports=router

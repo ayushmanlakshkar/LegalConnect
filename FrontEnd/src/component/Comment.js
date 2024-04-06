@@ -1,6 +1,6 @@
 import React from 'react';
 import pp2 from './images/pp2.png';
-export default function Comment() {
+export default function Comment({toggle}) {
     let mystyle = {
         height: '100vh',
         width: '100vw',
@@ -47,7 +47,8 @@ export default function Comment() {
     return (
       <div style={mystyle}>
           <div style={commentbox} className='container bg-light'>
-              <h3 className='text-center text-dark'>Showing Comment</h3>
+              <h3 className='text-center text-dark'>Comments</h3>
+              <button onClick={()=>toggle()}>Go back</button>
               <div style={myStyle3} className='container text-dark bg-light'>
                   <img src={pp2} style={img} /><b> Anonymous</b>
                   <div style={myStyle} className='container text-dark'>
