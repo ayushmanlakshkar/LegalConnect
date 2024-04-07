@@ -45,10 +45,10 @@ export default function Login() {
   const handleLogin =async ()=>{
     await axios.post(`${BASE_URL_BACKEND}auth/loginUser`, {username:name,password}).then((response) => {
       setToast({ message: response.data.message,type:true })
+      setUsername(name)
       toggleLogin()
-      setUsername(username)
       setRedirect(true); // Set redirect to true after successful login
-
+      console.log(name)
   }).catch(err => {
       setToast({ message: err.response.data, type: false })
   })
@@ -56,6 +56,7 @@ export default function Login() {
   if (redirect) {
     return <Navigate to="/home" />;
   }
+
   return (
     <div className="center-center">
     <div className="form">

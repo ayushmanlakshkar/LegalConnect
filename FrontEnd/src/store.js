@@ -25,5 +25,6 @@ export const useLogin = create((set)=>({
 
 export const useUser = create((set)=>({
     username:"",
-    setUsername:(name)=>{set({username:name})}
+    setUsername:(name)=>{console.log(name)
+        set({username:name})}
 }))
