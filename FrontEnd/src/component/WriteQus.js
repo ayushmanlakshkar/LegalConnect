@@ -70,7 +70,7 @@ console.log(anony)
   }
   const postQuestion = async () => {
     console.log(username)
-    await axios.post(`${BASE_URL_BACKEND}post/create`, { username: 'ayushman', content: content, postType: 'question', anonymous: anony }).then((res)=>{
+    await axios.post(`${BASE_URL_BACKEND}post/create`, { username: username, content: content, postType: 'question', anonymous: anony }).then((res)=>{
       setToast({ message: "post created", type: true })
     }).catch((err) => {
       setToast({ message: err.response.data, type: false })

@@ -4,12 +4,13 @@ import tele from './images/tele.png';
 import insta from './images/insta.png';
 import pin from './images/pin.png';
 import axios from 'axios'
-import { useToast } from '../store';
+import { useToast, useUser } from '../store';
 import { BASE_URL_BACKEND } from '../service/Api';
 
 
 export default function Write() {
   const [content, setContent] = useState()
+  const{username}=useUser()
   const { setToast } = useToast()
   let myStyle = {
     borderRadius: '10px',
@@ -34,7 +35,7 @@ export default function Write() {
 
   const postExperience = async () => {
     console.log("ekhbkf")
-    await axios.post(`${BASE_URL_BACKEND}post/create`, { username: 'ayushman', content: content, postType: 'experience' }).then((res) => {
+    await axios.post(`${BASE_URL_BACKEND}post/create`, { username: username, content: content, postType: 'experience' }).then((res) => {
       setToast({ message: "post created", type: true })
     }).catch((err) => {
       setToast({ message: err.response.data, type: false })
