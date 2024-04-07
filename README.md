@@ -1,4 +1,7 @@
-# LegalConnect Readme
+# LegalConnect
+
+![logo legal 101](https://github.com/ayushmanlakshkar/Legal101/assets/121045636/90ba6ca3-581f-4852-8ce4-f7e7089c719d)
+
 
 LegalConnect is a cutting-edge web application designed to bridge the gap between legal professionals and the public. With a seamless blend of professional networking and knowledge-sharing features inspired by platforms like LinkedIn and Quora, LegalConnect offers a unique and invaluable resource for both lawyers and individuals seeking legal guidance.
 
@@ -33,17 +36,25 @@ LegalConnect is built using modern technologies to ensure a robust and efficient
 - **Frontend**: Developed using React.js for its dynamic and responsive user interface.
 - **Backend**: Powered by Python for server-side logic and data handling.
 - **Database**: MongoDB is used as the database for storing user profiles, posts, messages, and other relevant data.
-- **AI Integration**: Leveraging advanced AI capabilities for features like user-friendly summarization and personalized recommendations.
-- **State Management**: Utilizing Redux for efficient state management and data flow within the application.
+- **AI Integration**: Leveraging advanced AI capabilities for features like user-friendly summarization using Gemini pro API and AI Legal Advisor leveraging langchain Fssi vector database functionalities .
 
 ## Getting Started
 
 To run LegalConnect locally, follow these steps:
 
+<b>Make Sure You are running on python version >=3.9</b> (Preferably 3.10.0)
+
 1. Clone the repository: `git clone https://github.com/legalconnect.git`
-2. Navigate to the project directory: `cd legalconnect`
+2. Navigate to the project directory: `cd legalconnect/Backened`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
+5. Navigate to the project directory: `cd ../Frontend`
+6. Install dependencies: `npm install`
+7. Start the development server: `npm start`
+8. Navigate to the AI_Legal_Advisor : `cd ../Legal_Advisor_AI`
+9. Install dependencies: `pip install -r requirements.txt`
+10. Make Sure to run the file in order to start your flask API on Local host : `app.py`
+11. All backend frontend and Legal AI Advisor servers should be started on different termials
 
 LegalConnect will be accessible at `http://localhost:3000` by default.
 
