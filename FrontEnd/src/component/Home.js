@@ -47,6 +47,10 @@ const [open,setOpen]=useState(false)
         setToast({ message: err.response.data, type: false })
       })
   }
+  const summarize=()=>{
+
+    
+  }
   useEffect(()=>{
     renderPosts()
   },[])
@@ -64,6 +68,7 @@ const [open,setOpen]=useState(false)
                   posts.map((post)=>{
                     return <div style={myStyle} className='container'>
                     <br/> <p className='text-light'><img src={pp}  width="50" height="50"/><b>{post.anonymous_name?"Anonymous":post.ref_user}</b><img src={star}  width="15" height="15"/> (4.5)</p>
+                     <button onClick={summarize}>summarize</button>
                      <div style={myStyle2} className='container bg-light'> 
                        <div className='row'>
                         <br></br>

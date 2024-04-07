@@ -44,8 +44,9 @@ export default function Write() {
   return (
     <>
       <div style={myStyle} className='container'>
-        <br /><textarea style={{ borderRadius: '20px' }} value={content} onChange={(e) => setContent(e.target.value)} rows="1" cols="30" placeholder='     Write a Post..........'></textarea>
-        <button onClick={postExperience}>Post</button>      <br /><br />
+        <br /><textarea style={{ borderRadius: '20px' }} value={content} onChange={(e) => setContent(e.target.value)} rows="4" cols="30" placeholder='     Write a Post..........'></textarea>
+        <button onClick={postExperience}>Post</button> 
+          <br /><br />
       </div>
       <div style={myStyle2} className='container text-light'>
         <br /><p className='d-flex justify-content-center'><b>Recommanded Laywer</b></p>
