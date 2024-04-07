@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import send from './images/send.png';
+import axios from 'axios'
 export default function AIChat() {
+  const [question,setQuestion]=useState('')
+  const [content,setContent]=useState('')
     let myStyle={
         borderRadius:'10px',
         backgroundColor:'rgba(54,56,88,0.75)',
@@ -24,14 +27,19 @@ export default function AIChat() {
         marginLeft:'10px',
         padding:'5px'
       }
+
+      const generateContent = async() =>{
+    setContent("Solution is shown here .....")
+      }
+
   return (
     <div style={myStyle} className='container'> 
         <br/><p className='text-center text-light'>Chat with AI</p>
         <div style={myStyle1} className='container bg-light'> 
-
+{content}
         </div><br/>
-        <textarea style={{borderRadius:'20px',marginLeft:'10px'}} rows="1" cols="45" placeholder='     Write your promp here..........'></textarea>
-        <img src={send} style={img} className='bg-light'/><br/><br/>
+        <textarea style={{borderRadius:'20px',marginLeft:'10px'}} rows="2" cols="45" placeholder='     Write your promp here..........' value={question} onChange={(e)=>setQuestion(e.target.vale)}></textarea>
+        <button onClick={()=>{generateContent()}}>Generate prompt</button>
     </div> 
   )
 }
