@@ -44,8 +44,8 @@ To run LegalConnect locally, follow these steps:
 
 <b>Make Sure You are running on python version >=3.9</b> (Preferably 3.10.0)
 
-1. Clone the repository: `git clone https://github.com/legalconnect.git`
-2. Navigate to the project directory: `cd legalconnect/Backened`
+1. Clone the repository: `git clone https://github.com/LegalConnect.git`
+2. Navigate to the project directory: `cd LegalConnect/Backened`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Navigate to the project directory: `cd ../Frontend`
