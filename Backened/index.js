@@ -22,14 +22,12 @@ app.use(cors());
 app.use('/auth',authRoutes)
 app.use('/post',postRoutes)
 app.use('/comment',commentRoutes)
-console.log(process.env.MONGO_URL)
 
 mongoose.connect('mongodb+srv://clashingtech44:1234567890@cluster0.p9wymk5.mongodb.net/Legal101')
     .then(() => {
         app.listen(process.env.PORT || 3001, () => {
             console.log('Server is running on port ' + (process.env.PORT || 3001));
         });
-
     })
     .catch((err) => {
         console.log(err)

@@ -1,0 +1,525 @@
+
+
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  --light: #bdbdbd;
+  --dark: #111216;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background-color: var(--dark);
+  border-radius: 15px;
+  cursor: pointer;
+  border: 2px solid theme('colors.text');
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.checkbox:checked ~ .switch-label {
+  border-color: black;
+}
+
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 6px -4px 0px 0px var(--light);
+  box-shadow: inset 6px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* //////////// */
+
+.sendbutton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0px 0px 20px theme('colors.shadow'); /* Default to light theme's iconShadow */
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+#sendIcon {
+  width: 30px;
+  transition-duration: .3s;
+  fill: #0095F6;
+}
+
+
+.sendbutton:hover {
+  width: 100px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: #0095F6;
+  align-items: center;
+}
+
+.sendbutton:hover #sendIcon {
+  transition-duration: .3s;
+  transform: translateX(65%);
+  fill: white;
+}
+
+.sendbutton::before {
+  position: absolute;
+  top: -13px;
+  left: 16px;
+  content: "Post";
+  color: white;
+  transition-duration: .3s;
+  font-size: 10px;
+}
+
+.sendbutton:hover::before {
+  font-size: 15px;
+  opacity: 1;
+  transform: translateY(27px);
+  transition-duration: .3s;
+}
+
+
+/* ////// */
+
+.linkButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0px 0px 20px theme('colors.shadow'); /* Default to light theme's iconShadow */
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+#linkIcon {
+  width: 30px;
+  transition-duration: .3s;
+  fill: #0095F6;
+}
+
+
+.linkButton:hover {
+  width: 100px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: #0095F6;
+  align-items: center;
+}
+
+.linkButton:hover #linkIcon {
+  transition-duration: .3s;
+  transform: translateX(60%);
+  fill: white;
+}
+
+.linkButton::before {
+  position: absolute;
+  top: -20px;
+  left: 16px;
+  content: "Link";
+  color: white;
+  transition-duration: .3s;
+  font-size: 10px;
+}
+
+.linkButton:hover::before {
+  font-size: 15px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}
+
+/* ////// */
+.galleryButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+  
+  box-shadow:0px 0px 20px theme('colors.shadow'); /* Default to light theme's iconShadow */
+}
+
+
+#galleryIcon {
+  width: 30px;
+  transition-duration: .3s;
+  fill: #0095F6;
+}
+
+
+.galleryButton:hover {
+  width: 120px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: #0095F6;
+  align-items: center;
+}
+
+.galleryButton:hover #galleryIcon {
+  transition-duration: .3s;
+  transform: translateX(100%);
+  fill: white;
+}
+
+.galleryButton::before {
+  position: absolute;
+  top: -20px;
+  left: 16px;
+  content: "Gallery";
+  color: white;
+  transition-duration: .3s;
+  font-size: 10px;
+}
+
+.galleryButton:hover::before {
+  font-size: 15px;
+  opacity: 1;
+  transform: translateY(33px);
+  transition-duration: .3s;
+}
+
+
+/* /////// */
+.Viewbtn {
+  display: inline-block;
+  padding: 0.2rem 1.4rem;
+  color: white;
+  border: 3px solid #0095F6;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+ }
+ 
+ .Viewbtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0095F6;
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
+ }
+ 
+ .Viewbtn:hover::before {
+  transform: translateX(0);
+ }
+
+ /* ../// */
+ .Connectbtn {
+  display: inline-block;
+  padding: 0.2rem 1.4rem;
+  color: white;
+  border: 3px solid #FFFFFF;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+ }
+ 
+ .Connectbtn:hover{
+  color: #000000;
+ }
+
+ .Connectbtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  /* border: 3px solid #000000; */
+
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
+ }
+ 
+ .Connectbtn:hover::before {
+  
+  transform: translateX(0);
+ }
+
+ /* .../// */
+ ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-2 .icon-content {
+  margin: 0 2px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: 60px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* background-color: #fff; */
+  transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+    );
+  }
+  .example-2 .icon-content a[data-social="youtube"] .filled,
+  
+  .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+  }
+  
+  
+  .youtubeInner{
+    fill: white;
+  }
+  
+  a[data-social="youtube"]{
+   fill: #FF0000;
+  }
+  a:hover[data-social="youtube"] .youtubeOuter {
+   fill: white;
+  }
+  a:hover[data-social="youtube"] .youtubeInner {
+    fill: #FF0000;
+   }
+
+   #linkedInOuter{
+    fill: #0274b3;
+   }
+   .linkedInInner{
+    fill: white;
+   }
+   a:hover[data-social="linkedin"] #linkedInOuter {
+    fill: white;
+   }
+   a:hover[data-social="linkedin"] .linkedInInner {
+     fill: #0274b3;
+     stroke: #0274b3;
+    }
+
+    .githubOuter{
+      fill: white;
+    }
+    .githubInner{
+      fill: black;
+    }
+    a:hover[data-social="github"] .githubOuter{
+      fill: black;
+    }
+    a:hover[data-social="github"] .githubInner{
+      fill: white;
+    }
+
+    .instagramIcon{
+      /* fill: linear-gradient(45deg, #833AB4, #E1306C, #FD1D1D, #FDCB5D); */
+      fill: #B73895;
+    }
+    a:hover[data-social="instagram"] .instagramIcon{
+      fill: white;
+    }
+
+
+    /* //////// */
+    
+    #Menucheckbox {
+      display: none;
+    }
+    
+    .Menutoggle {
+      position: relative;
+      width: 35px;
+      height: 25px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 8px;
+      transition-duration: .5s;
+    }
+    
+    .Menubars {
+      width: 100%;
+      height: 4px;
+      background-color: rgb(92, 130, 255);
+      border-radius: 4px;
+    }
+    
+    #Menubar2 {
+      transition-duration: .8s;
+    }
+    
+    #Menubar1 {
+      width: 50%;
+    }
+    
+    #Menubar2 {
+      width: 75%;
+    }
+    
+    #Menucheckbox:checked + .Menutoggle .Menubars {
+      position: absolute;
+      transition-duration: .5s;
+    }
+    
+    #Menucheckbox:checked + .Menutoggle #Menubar2 {
+      transform: scaleX(0);
+      transition-duration: .1s;
+    }
+    
+    #Menucheckbox:checked + .Menutoggle #Menubar1 {
+      width: 75%;
+      transform: rotate(45deg);
+      transition-duration: .5s;
+    }
+    
+    #Menucheckbox:checked + .Menutoggle #Menubar3 {
+      width: 75%;
+      transform: rotate(-45deg);
+      transition-duration: .5s;
+    }
+    
+    #Menucheckbox:checked + .Menutoggle {
+      transition-duration: .5s;
+      transform: rotate(180deg);
+    }

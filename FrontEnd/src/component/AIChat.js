@@ -38,7 +38,7 @@ export default function AIChat() {
         <div style={myStyle1} className='container bg-light'> 
 {content}
         </div><br/>
-        <textarea style={{borderRadius:'20px',marginLeft:'10px'}} rows="2" cols="45" placeholder='     Write your promp here..........' value={question} onChange={(e)=>setQuestion(e.target.vale)}></textarea>
+        <textarea style={{borderRadius:'20px',marginLeft:'10px'}} rows="1" cols="45" placeholder='     Write your promp here..........' value={question} onChange={(e)=>setQuestion(e.target.vale)}></textarea>
         <button onClick={()=>{generateContent()}}>Generate prompt</button>
     </div> 
   )

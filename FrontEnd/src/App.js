@@ -20,11 +20,11 @@ function App() {
       <Router>
       <Navbar/>
         <Routes>
+            <Route  exact path="/Home" element={ <Home/> }/>
             <Route  exact path="/" element={<Hello/> }/>
             <Route  exact path="/registration" element={<Registration/> }/>
             <Route  exact path="/login" element={<Login/> }/>
             
-            <Route  exact path="/Home" element={ <Home/> }/>
             <Route   exact path="/QnA" element={ <QnA/> }/>
             <Route   exact path="/Verify" element={ <Verify/> }/>
           </Routes>

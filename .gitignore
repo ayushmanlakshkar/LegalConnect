@@ -18,3 +18,7 @@ logs/
 *.xlsx
 *.db
 *.sqlite3
+
+
+/FrontEnd/node_modules
+/Backened/node_modules
