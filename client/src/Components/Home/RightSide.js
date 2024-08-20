@@ -47,19 +47,18 @@ function RightSide() {
         "username": "john_doe",
         "education": "University of Chicago Law School, Chicago, Illinois, USA",
         "ratings": 4.5,
-        "description": "Enjoying the sunny day with friends at the park. The weather is perfect and the vibe is amazing!",
+        "description": "Drafting a comprehensive legal brief for an upcoming case. Precision and attention to detail are key in ensuring all arguments are solidly presented.",
         "images": [
           "https://picsum.photos/seed/1/600/400",
           "https://picsum.photos/seed/2/600/400"
         ]
-      },
-      {
+      },  {
         "id": 2,
         "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
         "username": "jane_doe",
         "education": "Harvard Law School, Cambridge, Massachusetts, USA",
         "ratings": 4.0,
-        "description": "Had a great time at the beach. The sun, the sand, and the waves made for a perfect day out. Can't wait to go back!",
+        "description": "Researching case law to strengthen arguments in a complex legal dispute. The library is my second home as I dive deep into past precedents.",
         "images": [
           "https://picsum.photos/seed/3/600/400",
           "https://picsum.photos/seed/4/600/400"
@@ -71,7 +70,7 @@ function RightSide() {
         "username": "alex_smith",
         "education": "Stanford Law School, Stanford, California, USA",
         "ratings": 4.8,
-        "description": "Loving the mountain views and fresh air. Hiking through the trails has been an incredible experience. Nature at its finest!",
+        "description": "Preparing for a trial with meticulous attention to detail. Every fact and piece of evidence is critical in building a compelling case.",
         "images": [
           "https://picsum.photos/seed/5/600/400",
           "https://picsum.photos/seed/6/600/400"
@@ -83,7 +82,7 @@ function RightSide() {
         "username": "lisa_jones",
         "education": "University of Chicago Law School, Chicago, Illinois, USA",
         "ratings": 3.9,
-        "description": "City life is the best life. There's always something to do and see. From amazing food to exciting nightlife, I love it all!",
+        "description": "Navigating through corporate contracts to ensure all terms are favorable. The devil is in the details, and I leave no stone unturned.",
         "images": [
           "https://picsum.photos/seed/7/600/400",
           "https://picsum.photos/seed/8/600/400"
@@ -95,13 +94,14 @@ function RightSide() {
         "username": "mike_brown",
         "education": "Corporate Counsel at Google, Mountain View, CA, USA",
         "ratings": 4.7,
-        "description": "Adventures in the wild are my favorite. Exploring new trails and enjoying the serenity of nature is unparalleled. Every hike brings new memories and stories.",
+        "description": "Advising on complex intellectual property issues to protect the company's innovative technologies. Legal expertise meets cutting-edge tech.",
         "images": [
           "https://picsum.photos/seed/9/600/400",
           "https://picsum.photos/seed/10/600/400"
         ]
       }
     ];
+    
     setData([...dd])
   }, [])
 

@@ -12,7 +12,7 @@ function Navbar() {
     const {toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
     const [transparent, setTransparent] = useState(true);
-    const [isMessagesRoute,setIsMessagesRoute ] = useState(false);
+    const [disapperSearchBar,setDisapperSearchBar ] = useState(false);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -22,8 +22,19 @@ function Navbar() {
     }, [])
 
     useEffect(() => {
-        location.pathname === '/' ? setTransparent(true) : setTransparent(false);
-        location.pathname === '/messages' ? setIsMessagesRoute(true) : setIsMessagesRoute(false);
+        if (location.pathname === '/') {
+            setTransparent(true);
+            setDisapperSearchBar(true);
+        } else {
+            setTransparent(false);
+        }
+    
+        if (location.pathname === '/messages') {
+            setDisapperSearchBar(true);
+        } else if (location.pathname !== '/') {
+            setDisapperSearchBar(false);
+        }
+        
     }, [location.pathname])
 
 
@@ -35,7 +46,7 @@ function Navbar() {
                     <img src={logo} className='h-10 w-10' alt='Logo' />
                 </div>
                 <div className='text-xl md:w-96 flex flex-1'>
-                    <div class={`${isMessagesRoute?"hidden":"relative"} text-tertiary w-full`}>
+                    <div class={`${disapperSearchBar?"hidden":"relative"} text-tertiary w-full`}>
                         <input
                         autoComplete='off'
                             // type="search"

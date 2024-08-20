@@ -73,7 +73,7 @@ function Right() {
           </button>
         </div>
       </div>
-      <div className='relative flex flex-1 flex-col '>
+      <div className='relative flex flex-1 flex-col px-5'>
         {/* <div className='absolute top-0 bottom-0 h-full w-full -z-0'>
           <img src={bg} alt='background' className='w-full h-full object-cover blur-xl'/>
         </div> */}
@@ -85,11 +85,11 @@ function Right() {
                 <div class="flex flex-col gap-1 w-full max-w-[320px]">
                   <div class="flex items-center space-x-2 rtl:space-x-reverse">
                   </div>
-                  <div class={`relative flex mt-2 flex-col leading-1.5 px-4 py-2 border-gray-200 bg-gray-100 ${contact.username != message.username ? "rounded-tl-xl" : "rounded-t-xl"} rounded-b-xl dark:bg-gray-700`}>
-                    <div className={`absolute top-0 select-none h-4 w-10 ${contact.username == message.username ? "left-0 skew-x-[40deg] rotate-12" : "right-0 -skew-x-[40deg] -rotate-12"} bg-gray-700`}></div>
+                  <div class={`relative flex mt-2 flex-col leading-1.5 px-4 py-4 border-gray-200 bg-gray-100 ${contact.username != message.username ? "rounded-tl-xl" : "rounded-t-xl"} rounded-b-xl bg-secondary`}>
+                    <div className={`absolute top-0 select-none h-4 w-10 ${contact.username == message.username ? "left-0 skew-x-[40deg] rotate-12" : "right-0 -skew-x-[40deg] -rotate-12"} bg-secondary`}></div>
                     {contact.username == message.username ? <span class="text-base font-semibold mb-1 text-pink-500 z-10 ">{message.username}</span> : null}
 
-                    <p class="text-sm font-normal text-gray-900 dark:text-white"> That's awesome. I think our users will really appreciate the improvements.</p>
+                    <p class="text-sm font-normal text-gray-900 dark:text-white z-10"> That's awesome. I think our users will really appreciate the improvements.</p>
                   </div>
                   <div className='flex gap-2 items-center justify-end mr-5'>
                     <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{formatMessageTime(message.timeDelivered)}</span>

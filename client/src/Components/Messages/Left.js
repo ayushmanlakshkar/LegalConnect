@@ -216,7 +216,7 @@ function Left() {
                 )}
               </div>
             </div>
-            <div className='w-11/12 h-[1px] bg-tertiary mx-auto'></div>
+            <div className='w-11/12 h-[1px] bg-text bg-opacity-10 mx-auto'></div>
           </div>
         ))}
       </div>
