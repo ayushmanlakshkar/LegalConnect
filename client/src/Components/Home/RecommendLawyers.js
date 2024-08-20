@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa6";
 import SocialIcons from '../../Utils/SocialIcons';
 
 
-function LeftSide() {
+function RecommendLawyers() {
     return (
         <div className='w-full min-h-40 sm:min-h-28 md:min-h-40 lg:w-4/12 lg:h-full flex flex-col p-5 py-8 gap-5 overflow-y-auto scrollbar-none'>
             <div className='w-full  flex flex-col lg:flex-col sm:flex-row'>
@@ -279,4 +279,4 @@ function LeftSide() {
     )
 }
 
-export default LeftSide
+export default RecommendLawyers

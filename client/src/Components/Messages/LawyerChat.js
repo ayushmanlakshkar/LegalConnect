@@ -4,8 +4,8 @@ import SendIcon from '@mui/icons-material/Send';
 import { formatMessageTime } from '../../Services/formatDateTime';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import bg from '../../assets/chatroombg.jpg';
-function Right() {
+
+function LawyerChat() {
   const contact = {
     id: '1',
     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
@@ -169,4 +169,4 @@ function Right() {
   )
 }
 
-export default Right
+export default LawyerChat

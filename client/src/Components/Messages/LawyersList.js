@@ -1,7 +1,7 @@
 import React from 'react'
 import { formatDateTime } from '../../Services/formatDateTime';
 
-function Left() {
+function LawyersList() {
   const contacts = [
     {
       id: '1',
@@ -225,4 +225,4 @@ function Left() {
   )
 }
 
-export default Left
+export default LawyersList

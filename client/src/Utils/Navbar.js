@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useUserDetails } from '../Store/store';
-import logo from '../assets/logo.png';
+import logo from '../assets/Legal_Connect_logo.png';
 import { useTheme } from '../Providers/ThemeProvider';
 import { Transition } from '@headlessui/react'; // Import Transition from headless UI
 import { useLocation, useNavigate } from 'react-router-dom';
 import SocialIcons from './SocialIcons';
-import { TextField } from '@mui/material';
 
 function Navbar() {
     const {isUserLoggedIn } = useUserDetails();

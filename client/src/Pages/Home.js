@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import LeftSide from '../Components/Home/LeftSide'
-import RightSide from '../Components/Home/RightSide'
+import RecommendLawyers from '../Components/Home/RecommendLawyers'
+import PostsSection from '../Components/Home/PostsSection'
 import { useCommentSection } from '../Store/store';
 
 function Home() {
 
   return (
     <div className='bg-primary flex-col overflow-y-scroll lg:overflow-y-hidden lg:flex-row flex lg:h-full lg:w-full '>
-      <LeftSide />
-      <RightSide />
+      <RecommendLawyers />
+      <PostsSection />
     </div>
   )
 }

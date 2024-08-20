@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextField } from '@mui/material'
-import ChatBotBg from '../../assets/images/ChatBotBg.png'
+import ChatBotBg from '../../assets/images/ChatBot_bg.png'
 
 
 function ChatBot() {

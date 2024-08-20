@@ -3,7 +3,7 @@ import ChatBot from './ChatBot'
 import { TextField } from '@mui/material'
 import SocialIcons from '../../Utils/SocialIcons'
 
-function RightSide() {
+function AskQuestion() {
   return (
     <div className='lg:w-5/12  h-auto flex-col pr-9 overflow-auto hidden lg:flex '>
       <div className='w-full flex flex-col gap-3 lg:flex-col sm:flex-row bg-secondary py-5 px-5 mt-5 rounded-lg border-[1px] border-text border-opacity-10'>
@@ -148,4 +148,4 @@ function RightSide() {
   )
 }
 
-export default RightSide
+export default AskQuestion

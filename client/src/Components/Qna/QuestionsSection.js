@@ -4,7 +4,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { formatDateTime } from '../../Services/formatDateTime';
 
 
-function LeftSide() {
+function QuestionsSection() {
     const sampleQuestions = [
         {
             id: 1,
@@ -261,4 +261,4 @@ function LeftSide() {
     )
 }
 
-export default LeftSide
+export default QuestionsSection

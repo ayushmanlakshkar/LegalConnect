@@ -1,6 +1,6 @@
 import React from 'react'
-import bgCourt from '../assets/images/bgCourt.png'
-import lawyer from '../assets/images/lawyer.png'
+import bgCourt from '../assets/images/Landing_Court_bg.png'
+import lawyer from '../assets/images/Landing_Lawyer.png'
 import { FaStar } from "react-icons/fa6";
 
 

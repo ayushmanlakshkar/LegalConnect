@@ -8,7 +8,7 @@ import { useCommentSection } from '../../Store/store';
 
 
 
-function RightSide() {
+function PostsSection() {
   const [data, setData] = useState([])
   const [expanded, setExpanded] = useState({}); // Track expanded post ID
   const [isLikedPost, setIsLikedPost] = useState({}); // Track expanded post ID
@@ -236,4 +236,4 @@ function RightSide() {
   )
 }
 
-export default RightSide
+export default PostsSection
