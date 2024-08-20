@@ -19,7 +19,7 @@ export const useToast = create((set)=>({
 }))
 
 export const useLogin = create((set)=>({
-    status:false,
+    status:true,
     toggleLogin:()=>{set((state)=>({status:!state.status}))}
 }))
 

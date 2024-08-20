@@ -1,18 +1,36 @@
 import React from 'react'
-import sendIcon from '../../assets/sendicon.svg'
 import { TextField } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { FaStar } from "react-icons/fa6";
+import SocialIcons from '../../Utils/SocialIcons';
+
 
 function LeftSide() {
     return (
-        <div className='lg:w-6/12 w-full h-auto lg:h-full flex flex-col py-4 lg:py-6 px-6 lg:pl-8 gap-8 overflow-y-hidden lg:overflow-y-auto scrollbar-none'>
-            <div className='w-full mt-8 flex flex-col lg:flex-col sm:flex-row'>
-                <div className='flex w-full items-center'>
-                    <div className='mr-3 w-full'>
-                        <TextField multiline placeholder='Write a Post...' size='small' maxRows={15} className='text-black bg-white min-h-9 flex multi w-full rounded-2xl mr-3' />
+        <div className='w-full min-h-40 sm:min-h-28 md:min-h-40 lg:w-4/12 lg:h-full flex flex-col p-5 py-8 gap-5 overflow-y-auto scrollbar-none'>
+            <div className='w-full  flex flex-col lg:flex-col sm:flex-row'>
+                <div className='flex w-full '>
+                    <div className='mr-3 w-full my-auto'>
+                        <TextField multiline placeholder='Write a Post...' size='small' maxRows={15} className='text-white bg-white rounded-md min-h-9 flex multi w-full  mr-3' InputProps={{
+                            classes: {
+                                notchedOutline: 'custom-outline',
+                            },
+                        }}
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {
+                                        border: 'none', // Remove default border
+                                    },
+                                    '&:hover fieldset': {
+                                        border: 'none', // Remove border on hover
+                                    },
+                                    '&.Mui-focused fieldset': {
+                                        border: 'none', // Remove border on focus
+                                    },
+                                },
+                            }} />
                     </div>
-                    <div>
+                    <div className='my-auto'>
                         <button className="sendbutton ml-auto">
                             <svg id='sendIcon'
                                 version="1.1"
@@ -39,7 +57,6 @@ function LeftSide() {
                             </svg>
                         </button>
                     </div>
-
                 </div>
                 <div className='flex flex-row my-3 mx-4 gap-4'>
                     <button className="linkButton ">
@@ -134,17 +151,17 @@ function LeftSide() {
                     </button>
                 </div>
             </div>
-            <div className='hidden lg:flex flex-1 rounded-3xl bg-secondary flex-col h-auto items-center px-5 py-3'>
+            <div className='hidden  lg:flex rounded-xl bg-secondary flex-col items-center px-5 py-3  border-[1px] border-text border-opacity-10'>
                 <div className='font-extrabold text-xl my-4'>
                     Recommended Lawyers
                 </div>
                 <div className='w-full flex flex-col text-lg gap-3'>
-                    
-                    <div className='flex items-center flex-wrap justify-between w-full '>
+
+                    {/* <div className='flex items-center flex-wrap justify-between w-full '>
                         <div className='flex gap-2 items-center'>
                             <div className='text-6xl'>
 
-                            <AccountCircleIcon fontSize='inherit' />
+                                <AccountCircleIcon fontSize='inherit' />
                             </div>
                             <div className='lawyerName'>
                                 Lawyer 1
@@ -158,11 +175,12 @@ function LeftSide() {
                             <button className="Viewbtn rounded-full text-base">View</button>
                         </div>
 
-                    </div><div className='flex items-center flex-wrap justify-between w-full '>
+                    </div>
+                    <div className='flex items-center flex-wrap justify-between w-full '>
                         <div className='flex gap-2 items-center'>
                             <div className='text-6xl'>
 
-                            <AccountCircleIcon fontSize='inherit' />
+                                <AccountCircleIcon fontSize='inherit' />
                             </div>
                             <div className='lawyerName'>
                                 Lawyer 1
@@ -176,11 +194,12 @@ function LeftSide() {
                             <button className="Connectbtn rounded-full text-base">Connect</button>
                         </div>
 
-                    </div><div className='flex items-center flex-wrap justify-between w-full '>
+                    </div> */}
+                    <div className='flex items-center flex-wrap justify-between w-full '>
                         <div className='flex gap-2 items-center'>
                             <div className='text-6xl'>
 
-                            <AccountCircleIcon fontSize='inherit' />
+                                <AccountCircleIcon fontSize='inherit' />
                             </div>
                             <div className='lawyerName'>
                                 Lawyer 1
@@ -198,8 +217,45 @@ function LeftSide() {
                     <div className='flex items-center flex-wrap justify-between w-full '>
                         <div className='flex gap-2 items-center'>
                             <div className='text-6xl'>
+                                <AccountCircleIcon fontSize='inherit' />
+                            </div>
+                            <div className='lawyerName'>
+                                Lawyer 1
+                            </div>
+                            <div className='ratings flex items-center'>
+                                <FaStar className='text-yellow-500' />
+                                (3.5)
+                            </div>
+                        </div>
+                        <div className='flex flex-1  justify-center'>
+                            <button className="Viewbtn rounded-full text-base">View</button>
+                        </div>
 
-                            <AccountCircleIcon fontSize='inherit' />
+                    </div>
+                    <div className='flex items-center flex-wrap justify-between w-full '>
+                        <div className='flex gap-2 items-center'>
+                            <div className='text-6xl'>
+
+                                <AccountCircleIcon fontSize='inherit' />
+                            </div>
+                            <div className='lawyerName'>
+                                Lawyer 1
+                            </div>
+                            <div className='ratings flex items-center'>
+                                <FaStar className='text-yellow-500' />
+                                (3.5)
+                            </div>
+                        </div>
+                        <div className='flex flex-1  justify-center'>
+                            <button className="Viewbtn rounded-full text-base">View</button>
+                        </div>
+
+                    </div>
+                    <div className='flex items-center flex-wrap justify-between w-full '>
+                        <div className='flex gap-2 items-center'>
+                            <div className='text-6xl'>
+
+                                <AccountCircleIcon fontSize='inherit' />
                             </div>
                             <div className='lawyerName'>
                                 Lawyer 1
@@ -215,6 +271,9 @@ function LeftSide() {
 
                     </div>
                 </div>
+            </div>
+            <div className='md:flex  -my-3 hidden'>
+                <SocialIcons top  />
             </div>
         </div>
     )

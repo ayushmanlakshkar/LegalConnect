@@ -6,7 +6,10 @@ import { FaStar } from "react-icons/fa6";
 
 function LandingPage() {
     return (
-        <div className="relative text-text w-full min-h-screen flex flex-col ">
+        <div className="absolute top-0 left-0 w-full min-h-screen  ">
+            <div className='relative w-full h-screen text-text flex flex-col'>
+
+            
             <img
                 className="absolute inset-0 w-full h-screen filter contrast-50 blur-sm"
                 src={bgCourt}
@@ -42,7 +45,7 @@ function LandingPage() {
                 </div>
 
             </div>
-
+            </div>
         </div>
     )
 }

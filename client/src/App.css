@@ -244,7 +244,7 @@
 .Viewbtn {
   display: inline-block;
   padding: 0.2rem 1.4rem;
-  color: white;
+  color: theme('colors.text');
   border: 3px solid #0095F6;
   cursor: pointer;
   position: relative;
@@ -253,6 +253,10 @@
   overflow: hidden;
   z-index: 1;
   font-family: inherit;
+ }
+
+ .Viewbtn:hover{
+  color: white;
  }
  
  .Viewbtn::before {
@@ -276,8 +280,8 @@
  .Connectbtn {
   display: inline-block;
   padding: 0.2rem 1.4rem;
-  color: white;
-  border: 3px solid #FFFFFF;
+  color: theme('colors.text');
+  border: 3px solid theme('colors.text');
   cursor: pointer;
   position: relative;
   background-color: transparent;
@@ -288,7 +292,7 @@
  }
  
  .Connectbtn:hover{
-  color: #000000;
+  color: theme('colors.primary');;
  }
 
  .Connectbtn::before {
@@ -298,7 +302,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: theme('colors.text');
   /* border: 3px solid #000000; */
 
   transform: translateX(-100%);
@@ -318,14 +322,17 @@
 
 .example-2 {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
 .example-2 .icon-content {
-  margin: 0 2px;
+  margin: 0px 2px;
   position: relative;
 }
+.example-2 .icon-content .bottom-tooltip,
 .example-2 .icon-content .tooltip {
+  z-index: 7;
   position: absolute;
   top: -30px;
   left: 50%;
@@ -338,11 +345,20 @@
   font-size: 14px;
   transition: all 0.3s ease;
 }
-.example-2 .icon-content:hover .tooltip {
+
+.example-2 .icon-content:hover .bottom-tooltip {
   opacity: 1;
   visibility: visible;
   top: 60px;
 }
+
+
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
 .example-2 .icon-content a {
   position: relative;
   overflow: hidden;
@@ -382,15 +398,23 @@
 }
 
 .example-2 .icon-content a[data-social="linkedin"] .filled,
-.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+.example-2 .icon-content a[data-social="linkedin"] ~ .bottom-tooltip,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip  {
+  background-color: #0274b3;
+}
+.example-2 .icon-content a[data-social="linkedin"] ~ .bottom-tooltip,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip 
+  {
   background-color: #0274b3;
 }
 
 .example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .bottom-tooltip,
 .example-2 .icon-content a[data-social="github"] ~ .tooltip {
   background-color: #24262a;
 }
 .example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .bottom-tooltip,
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
   background: linear-gradient(
     45deg,
@@ -404,6 +428,7 @@
   }
   .example-2 .icon-content a[data-social="youtube"] .filled,
   
+  .example-2 .icon-content a[data-social="youtube"] ~ .bottom-tooltip,
   .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
     background-color: #ff0000;
   }
@@ -475,7 +500,7 @@
       align-items: flex-start;
       justify-content: center;
       gap: 8px;
-      transition-duration: .5s;
+      transition-duration: .3s;
     }
     
     .Menubars {
@@ -486,7 +511,7 @@
     }
     
     #Menubar2 {
-      transition-duration: .8s;
+      transition-duration: 0s;
     }
     
     #Menubar1 {
@@ -499,27 +524,60 @@
     
     #Menucheckbox:checked + .Menutoggle .Menubars {
       position: absolute;
-      transition-duration: .5s;
+      transition-duration: .3s;
     }
     
     #Menucheckbox:checked + .Menutoggle #Menubar2 {
       transform: scaleX(0);
-      transition-duration: .1s;
+      transition-duration: .3s;
     }
     
     #Menucheckbox:checked + .Menutoggle #Menubar1 {
       width: 75%;
       transform: rotate(45deg);
-      transition-duration: .5s;
+      transition-duration: .3s;
     }
     
     #Menucheckbox:checked + .Menutoggle #Menubar3 {
       width: 75%;
       transform: rotate(-45deg);
-      transition-duration: .5s;
+      transition-duration: .3s;
     }
     
     #Menucheckbox:checked + .Menutoggle {
-      transition-duration: .5s;
+      transition-duration: .3s;
       transform: rotate(180deg);
     }
+
+
+    .chat-bubble {
+      --r: 1em;  /* the radius */
+      --t: 1.5em; /* the size of the tail */
+      
+      max-width: 300px;
+      padding: 1em;
+      border-inline: var(--t) solid #0000;
+      border-radius: calc(var(--r) + var(--t)) / var(--r);
+      mask: 
+        radial-gradient(100% 100% at var(--_p) 0, #0000 99%, #000 102%) 
+          var(--_p) 100%/var(--t) var(--t) no-repeat,
+        linear-gradient(#000 0 0) padding-box;
+      color: #fff;
+    }
+    
+    /* Left bubble - Green background */
+    .bubble-left {
+      --_p: 0;
+      border-bottom-left-radius: 0 0;
+      place-self: start;
+      background: linear-gradient(135deg, #4CAF50, #388E3C) border-box; /* Green gradient */
+    }
+    
+    /* Right bubble - Sky blue background */
+    .bubble-right {
+      --_p: 100%;
+      border-bottom-right-radius: 0 0;
+      place-self: end;
+      background: linear-gradient(135deg, #87CEEB, #4682B4) border-box; /* Sky blue gradient */
+    }
+    

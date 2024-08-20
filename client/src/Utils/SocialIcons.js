@@ -1,22 +1,22 @@
 import React from 'react'
 
-function SocialIcons() {
+function SocialIcons({top}) {
     return (
-        <ul class="example-2">
-            <li class="icon-content">
+        <ul className="example-2">
+            <li className="icon-content">
                 <a
                     href="https://linkedin.com/"
                     aria-label="LinkedIn"
                     data-social="linkedin"
                 >
-                    <div class="filled"></div>
+                    <div className="filled"></div>
                     <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" id='linkedInOuter'></rect><circle cx="142" cy="138" className='linkedInInner' r="37"></circle><path className='linkedInInner' stroke-width="66" d="M244 194v198M142 194v198"></path><path className='linkedInInner' d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"></path></g></svg>
                 </a>
-                <div class="tooltip">LinkedIn</div>
+                <div className={`${top?"tooltip":"bottom-tooltip"} pointer-events-none`}>LinkedIn</div>
             </li>
-            <li class="icon-content">
+            <li className="icon-content">
                 <a href="https://www.github.com/" aria-label="GitHub" data-social="github">
-                    <div class="filled"></div>
+                    <div className="filled"></div>
                     <svg width="800px" height="800px" viewBox="0 0 73 73" version="1.1" xmlns="http://www.w3.org/2000/svg" >
 
                         <g id="SVGRepo_bgCarrier" stroke-width="0" />
@@ -32,15 +32,15 @@ function SocialIcons() {
 
                     </svg>
                 </a>
-                <div class="tooltip">GitHub</div>
+                <div className={`${top?"tooltip":"bottom-tooltip"} pointer-events-none`}>GitHub</div>
             </li>
-            <li class="icon-content">
+            <li className="icon-content">
                 <a
                     href="https://www.instagram.com/"
                     aria-label="Instagram"
                     data-social="instagram"
                 >
-                    <div class="filled"></div>
+                    <div className="filled"></div>
                     <svg viewBox="0 0 2500 2500" xmlns="http://www.w3.org/2000/svg" fill="#000000">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -51,14 +51,14 @@ function SocialIcons() {
                             className="instagramIcon">
                             </path></g></svg>
                 </a>
-                <div class="tooltip">Instagram</div>
+                <div className={`${top?"tooltip":"bottom-tooltip"} pointer-events-none`}>Instagram</div>
             </li>
-            <li class="icon-content">
+            <li className="icon-content">
                 <a href="https://youtube.com/" aria-label="Youtube" data-social="youtube">
-                    <div class="filled"></div>
+                    <div className="filled"></div>
                     <svg viewBox="0 -38 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M250.346231,28.0746923 C247.358133,17.0320558 238.732098,8.40602109 227.689461,5.41792308 C207.823743,0 127.868333,0 127.868333,0 C127.868333,0 47.9129229,0.164179487 28.0472049,5.58210256 C17.0045684,8.57020058 8.37853373,17.1962353 5.39043571,28.2388718 C-0.618533519,63.5374615 -2.94988224,117.322662 5.5546152,151.209308 C8.54271322,162.251944 17.1687479,170.877979 28.2113844,173.866077 C48.0771024,179.284 128.032513,179.284 128.032513,179.284 C128.032513,179.284 207.987923,179.284 227.853641,173.866077 C238.896277,170.877979 247.522312,162.251944 250.51041,151.209308 C256.847738,115.861464 258.801474,62.1091 250.346231,28.0746923 Z" className="youtubeOuter"> </path> <polygon className="youtubeInner" points="102.420513 128.06 168.749025 89.642 102.420513 51.224"> </polygon> </g> </g></svg>
                 </a>
-                <div class="tooltip">Youtube</div>
+                <div className={`${top?"tooltip":"bottom-tooltip"} pointer-events-none`}>Youtube</div>
             </li>
         </ul>
     )
