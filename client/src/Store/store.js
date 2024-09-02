@@ -8,10 +8,18 @@ export const useUserDetails = create((set)=>({
 
 export const useCommentSection = create((set)=>({
     isCommentSectionOf:'',
-    openCommentSection : false,
+    isCommentSectionOpen : false,
     setOpenCommentSection : (status) => set((state)=>({
-        openCommentSection : status
+        isCommentSectionOpen : status
     })),
     setIsCommentSectionOf:(postID) => set((state)=>({isCommentSectionOf:postID}))
+}))
 
+export const useQuestionModal = create((set)=>({
+    isQuestionModalOf:'',
+    isQuestionModalOpen : true,
+    setOpenQuestionModal : (status) => set((state)=>({
+        isQuestionModalOpen : status
+    })),
+    setIsQuestionModalOf:(questionID) => set((state)=>({isQuestionModalOf:questionID}))
 }))

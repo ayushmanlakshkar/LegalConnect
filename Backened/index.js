@@ -19,9 +19,9 @@ app.use(express.static('public'))
 app.use(cors());
 
 
-app.use('/auth',authRoutes)
-app.use('/post',postRoutes)
-app.use('/comment',commentRoutes)
+app.use('/api/auth',authRoutes)
+app.use('/api/post',postRoutes)
+app.use('/api/comment',commentRoutes)
 
 mongoose.connect('mongodb+srv://clashingtech44:1234567890@cluster0.p9wymk5.mongodb.net/Legal101')
     .then(() => {

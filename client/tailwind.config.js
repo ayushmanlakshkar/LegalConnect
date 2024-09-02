@@ -11,7 +11,6 @@ module.exports = {
         none: 'none',
       },
       boxShadow: {
-        // iconShadow: '0px 0px 20px rgba(255, 255, 255, 0.164)',
       },
       scale: {
         'sm': '0.8', // Small scale
@@ -52,6 +51,9 @@ module.exports = {
             skew: {
               '20': '20deg',
             },
+            boxShadow:{
+  chatShadow:"0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1)"
+            }
           },
         },
         {
@@ -66,6 +68,9 @@ module.exports = {
               shadow: 'rgba(255, 255, 255,0.164)',
               tertiary: '#2d3748', // Deep teal for dark theme
             },
+            boxShadow:{
+              chatShadow:'0 1px 2px rgba(255, 255, 255, 0.05), 0 1px 3px rgba(255, 255, 255, 0.1)'
+            }
           },
         },
       ],

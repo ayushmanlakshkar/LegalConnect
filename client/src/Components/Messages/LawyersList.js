@@ -195,7 +195,7 @@ function LawyersList() {
       </div>
       <div className='overflow-y-auto h-full w-full '>
         {contacts.map(contact => (
-          <div className='w-full bg-white bg-opacity-0  hover:bg-opacity-5 cursor-pointer'>
+          <div className='w-full bg-text bg-opacity-0  hover:bg-opacity-5 cursor-pointer'>
             <div key={contact.id} className='flex items-center  gap-4 py-4 mx-4 '>
               <div className='w-14 h-14'>
                 <img src={contact.avatar} alt='avatar' className='w-full h-full object-cover rounded-full' />

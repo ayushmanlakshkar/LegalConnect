@@ -5,13 +5,17 @@ import { useTheme } from '../Providers/ThemeProvider';
 import { Transition } from '@headlessui/react'; // Import Transition from headless UI
 import { useLocation, useNavigate } from 'react-router-dom';
 import SocialIcons from './SocialIcons';
+import { TbMessage2Question } from "react-icons/tb";
+import { AiOutlineMessage } from "react-icons/ai";
+import { IoHomeOutline } from "react-icons/io5";
+
 
 function Navbar() {
-    const {isUserLoggedIn } = useUserDetails();
-    const {toggleTheme } = useTheme();
+    const { isUserLoggedIn } = useUserDetails();
+    const { toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
     const [transparent, setTransparent] = useState(true);
-    const [disapperSearchBar,setDisapperSearchBar ] = useState(false);
+    const [disapperSearchBar, setDisapperSearchBar] = useState(false);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -27,16 +31,14 @@ function Navbar() {
         } else {
             setTransparent(false);
         }
-    
+
         if (location.pathname === '/messages') {
             setDisapperSearchBar(true);
         } else if (location.pathname !== '/') {
             setDisapperSearchBar(false);
         }
-        
+
     }, [location.pathname])
-
-
 
     return (
         <div className={`w-full text-text bg-secondary shadow-sm shadow-shadow flex justify-between items-center px-4 py-3 z-50 gap-3 ${transparent ? 'bg-opacity-10' : ''}`}>
@@ -45,9 +47,9 @@ function Navbar() {
                     <img src={logo} className='h-10 w-10' alt='Logo' />
                 </div>
                 <div className='text-xl md:w-96 flex flex-1'>
-                    <div class={`${disapperSearchBar?"hidden":"relative"} text-tertiary w-full`}>
+                    <div class={`${disapperSearchBar ? "hidden" : "relative"} text-tertiary w-full`}>
                         <input
-                        autoComplete='off'
+                            autoComplete='off'
                             // type="search"
                             name="search"
                             placeholder="Search"
@@ -75,11 +77,32 @@ function Navbar() {
             </div>
             {/* Dropdown menu for LG and below screens */}
 
-            <div className='hidden lg:flex text-text gap-24 justify-center font-extrabold text-lg'>
+            <div className='hidden lg:flex text-text gap-12 justify-center font-extrabold text-lg'>
                 {isUserLoggedIn ? <>
-                    <div onClick={() => navigate('/home')} className='cursor-pointer hover:text-blue-500 hover:underline'>Home</div>
-                    <div onClick={() => navigate('/qna')} className='cursor-pointer hover:text-blue-500 hover:underline'>QnA</div>
-                    <div onClick={() => navigate('/messages')} className='cursor-pointer hover:text-blue-500 hover:underline'>Messages</div>
+                    <div onClick={() => navigate('/home')} className='cursor-pointer flex gap-2 items-center justify-center hover:text-blue-500 hover:underline'>
+                    <div className='text-2xl'>
+                            <IoHomeOutline />
+                        </div>
+                        <span className='text-base'>
+                            Home
+                        </span>
+                    </div>
+                    <div onClick={() => navigate('/qna')} className='cursor-pointer flex items-center gap-2 justify-center hover:text-blue-500 hover:underline'>
+                        <div className='text-2xl'>
+                            <TbMessage2Question />
+                        </div>
+                        <span className='text-base'>
+                            Questionaire
+                        </span>
+                    </div>
+                    <div onClick={() => navigate('/messages')} className='cursor-pointer flex items-center gap-2 justify-center hover:text-blue-500 hover:underline'>
+                    <div className='text-2xl'>
+                            <AiOutlineMessage />
+                        </div>
+                        <span className='text-base'>
+                            Messages
+                        </span>
+                    </div>
                 </> :
                     <>
                         <div onClick={() => navigate('/login')} className='cursor-pointer hover:text-blue-500 hover:underline'>Log In</div>
@@ -120,7 +143,7 @@ function Navbar() {
                     {(ref) => (
                         <div
                             ref={ref}
-                            className='origin-top-right absolute py-4 px-4 text-lg left-0 mt-8 border-2 border-secondary min-w-56 rounded-md bg-opacity-100 shadow-lg bg-primary text-text ring-1 ring-black ring-opacity-5 focus:outline-none'
+                            className='origin-top-right absolute py-4 px-4 text-lg right-0 mt-8 border-2 border-secondary min-w-56 rounded-md bg-opacity-100 shadow-lg bg-primary text-text ring-1 ring-black ring-opacity-5 focus:outline-none'
                             role='menu'
                             aria-orientation='vertical'
                             aria-labelledby='menu-button'
@@ -181,9 +204,7 @@ function Navbar() {
                     )}
                 </Transition>
             </div>
-
             {/* Toggle switch for dark/light mode */}
-
 
         </div>
     );

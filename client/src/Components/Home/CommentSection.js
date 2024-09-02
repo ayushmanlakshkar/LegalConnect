@@ -6,7 +6,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { formatDateTime } from '../../Services/formatDateTime';
 
 function CommentSection() {
-    const { isCommentSectionOf, openCommentSection, setOpenCommentSection } = useCommentSection();
+    const { isCommentSectionOf, isCommentSectionOpen, setOpenCommentSection } = useCommentSection();
     const location = useLocation();
     const commentsData = [
         {
@@ -191,8 +191,6 @@ function CommentSection() {
         },
     ];
     
-      
-      
     useEffect(() => {
         if (location.pathname != '/home') {
             setOpenCommentSection(false)

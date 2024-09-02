@@ -9,7 +9,7 @@ function AskQuestion() {
       <div className='w-full flex flex-col gap-3 lg:flex-col sm:flex-row bg-secondary py-5 px-5 mt-5 rounded-lg border-[1px] border-text border-opacity-10'>
                 <div className='flex w-full '>
                     <div className='mr-3 w-full my-auto'>
-                        <TextField multiline placeholder='Ask a Question .....' size='small' maxRows={15} className='text-black bg-white rounded-md min-h-9 flex multi w-full  mr-3' />
+                        <TextField multiline placeholder='Ask a Question .....' size='small' maxRows={4} className='text-black bg-white rounded-md min-h-9 flex multi w-full  mr-3' />
                     </div>
                     <div className='flex gap-2'>
 
@@ -40,7 +40,7 @@ function AskQuestion() {
                                 </svg>
                             </button>
                         </div>
-                        <div>
+                        {/* <div>
                             <button className="linkButton ">
                                 <svg id='linkIcon' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.7281 3.88396C17.1624 2.44407 19.2604 2.41383 20.4219 3.57981C21.5856 4.74798 21.5542 6.85922 20.1189 8.30009L17.6951 10.7333C17.4028 11.0268 17.4037 11.5017 17.6971 11.794C17.9906 12.0863 18.4655 12.0854 18.7578 11.7919L21.1816 9.35869C23.0929 7.43998 23.3329 4.37665 21.4846 2.5212C19.6342 0.663551 16.5776 0.905664 14.6653 2.82536L9.81768 7.69182C7.90639 9.61053 7.66643 12.6739 9.5147 14.5293C9.80702 14.8228 10.2819 14.8237 10.5754 14.5314C10.8688 14.2391 10.8697 13.7642 10.5774 13.4707C9.41376 12.3026 9.4451 10.1913 10.8804 8.75042L15.7281 3.88396Z" ></path>
@@ -133,7 +133,7 @@ function AskQuestion() {
                                     <path d="M340.64 220.977c24.442 0 44.328-19.886 44.328-44.328s-19.886-44.328-44.328-44.328c-24.442 0-44.328 19.886-44.328 44.328s19.886 44.328 44.328 44.328zm0-71.863c15.184 0 27.536 12.352 27.536 27.536 0 15.183-12.352 27.536-27.536 27.536-15.184 0-27.536-12.353-27.536-27.536.002-15.185 12.353-27.536 27.536-27.536z" />
                                 </svg>
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
